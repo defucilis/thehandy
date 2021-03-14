@@ -18,11 +18,10 @@ class Handy {
     serverTimeOffset: number;
 
     constructor(connectionKey?: string) {
-        if (connectionKey) this._connectionKey = connectionKey;
+        if (connectionKey) this.connectionKey = connectionKey;
         else {
             const storedConnectionKey = localStorage.getItem("connectionKey");
             if (storedConnectionKey) this._connectionKey = storedConnectionKey;
-            else this._connectionKey = "";
         }
         this.serverTimeOffset = 0;
     }
