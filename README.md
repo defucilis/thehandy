@@ -24,6 +24,8 @@ npm i thehandy
 Using the library is a simple matter of initializing an instance of the `Handy` class, setting its connection key, and running commands!
 
 ```js
+import { Handy } from 'thehandy';
+
 const handy = new Handy();
 handy.connectionKey = "ABCD1234";
 const versionInfo = await handy.getVersion();
@@ -60,7 +62,7 @@ Now, you can access the device using the `useHandy` hook:
 
 ```js
 import React from "react";
-import useHandy from "thehandy";
+import { useHandy } from "thehandy";
 
 const App = () => {
   const {handy} = useHandy();
