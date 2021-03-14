@@ -1,6 +1,6 @@
 {
   "name": "thehandy",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "A wrapper around the public REST API for The Handy with TypeScript and React",
   "keywords": [
     "handy",
@@ -18,8 +18,8 @@
     "type": "git",
     "url": "https://github.com/defucilis/thehandy.git"
   },
-  "dependencies": {
-    "react": "^17.0.1"
+  "peerDependencies": {
+    "react": "^16.13.1"
   },
   "devDependencies": {
     "@types/react": "^17.0.3",

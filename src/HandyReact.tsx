@@ -1,5 +1,5 @@
 import React, { useState, useContext, createContext, ReactNode } from "react";
-import Handy from ".";
+import Handy from "./Handy";
 
 const handyContext = createContext<{ handy: Handy | null }>({handy: null});
 
