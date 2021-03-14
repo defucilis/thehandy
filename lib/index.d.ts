@@ -1,7 +1,6 @@
 import { HandyMode, ModeResponse, SetSpeedResponse, SetStrokeResponse, SettingsResponse, StatusResponse, SyncOffsetResponse, SyncPlayResponse, SyncPrepareResponse, VersionResponse } from "./types";
 declare class Handy {
     _connectionKey: string;
-    mode: HandyMode;
     serverTimeOffset: number;
     constructor(connectionKey?: string);
     get connectionKey(): string;
