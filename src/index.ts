@@ -15,7 +15,6 @@ const baseUrl = "https://www.handyfeeling.com/api/v1/";
 
 class Handy {
     _connectionKey: string;
-    mode: HandyMode;
     serverTimeOffset: number;
 
     constructor(connectionKey?: string) {
@@ -25,7 +24,6 @@ class Handy {
             if (storedConnectionKey) this._connectionKey = storedConnectionKey;
             else this._connectionKey = "";
         }
-        this.mode = HandyMode.off;
         this.serverTimeOffset = 0;
     }
 
