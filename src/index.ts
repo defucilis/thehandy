@@ -208,39 +208,6 @@ class Handy {
     getUrl(cmd: string) {
         return baseUrl + this.connectionKey + "/" + cmd;
     }
-
-    /*
-    public static void GetVersion(Action<HandyVersionData> onSuccess = null, Action<string> onError = null)
-    public static void GetSettings(Action<HandySettingsData> onSuccess = null, Action<string> onError = null)
-    public static void GetStatus(Action<HandyStatusData> onSuccess = null, Action<string> onError = null)
-    public static async void GetServerTime(int trips = 30, Action<long> onSuccess = null, Action<string> onError = null)
-    public static void SetMode(HandyMode mode, Action<HandyMode> onSuccess = null, Action<string> onError = null)
-    public static void ToggleMode(HandyMode mode, Action<HandyMode> onSuccess = null, Action<string> onError = null)
-    public static void SetSpeed(float speed, HandySpatialMode mode = HandySpatialMode.Percent, Action<HandySettingsData> onSuccess = null, Action<string> onError = null)
-    public static void StepSpeedUp(Action<HandySpatialData> onSuccess = null, Action<string> onError = null)
-    public static void StepSpeedDown(Action<HandySpatialData> onSuccess = null, Action<string> onError = null)
-    public static void SetStroke(float stroke, HandySpatialMode mode = HandySpatialMode.Percent, Action<HandySettingsData> onSuccess = null, Action<string> onError = null)
-    public static void StepStrokeUp(Action<HandySpatialData> onSuccess = null, Action<string> onError = null)
-    public static void StepStrokeDown(Action<HandySpatialData> onSuccess = null, Action<string> onError = null)
-    public static void SetPosition(float position, HandySpatialMode mode = HandySpatialMode.Percent, 
-    public static void ReSync(Action onSuccess = null, Action<string> onError = null)
-    public static void SyncPrepare(string url, string fileName = "", int fileSize = -1, Action onSuccess = null, Action<string> onError = null)
-    public static void SyncPlay(int time = 0, Action<HandyPlayingData> onSuccess = null, Action<string> onError = null)
-    public static void SyncPause(Action<HandyPlayingData> onSuccess = null, Action<string> onError = null)
-    public static void SyncOffset(int offset, Action<HandyPlayingData> onSuccess = null, Action<string> onError = null)
-    public static void SyncAdjustTimestamp(Action<long> onSuccess = null, Action<string> onError = null)
-    public static async void PatternToUrl(Vector2Int[] patternData, Action<string> onSuccess = null, Action<string> onError = null)
-    public static async void FunscriptToUrl(string funscript, string fileName = "", Action<string> onSuccess = null, Action<string> onError = null)
-    public static async void CsvToUrl(string csv, string fileName = "", Action<string> onSuccess = null, Action<string> onError = null)
-    private static void EnforceMode(HandyMode mode, Action command, Action<string> onError)
-    private static void TryLogVerbose(string commandDescription)
-    private static void TryLogError(string commandDescription, string error, Action<string> onError)
-    private static void TryLogResponse(string commandString, JSONNode responseJson)
-    private static bool CheckConnectionKey(string commandDescription, Action<string> onError)
-    private static bool ReportErrors(string commandDescription, JSONNode responseJson, Action<string> onError)
-    private static async Task<string> GetAsync(string uri)
-    private static async Task<string> PostAsync(string uri, string fileName, Stream file)
-    */
 }
 
 export default Handy;
