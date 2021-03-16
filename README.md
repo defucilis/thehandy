@@ -38,6 +38,8 @@ await handy.setSpeed(50);
 
 ## Getting Started (React)
 
+> NOTE! I've temporarily removed the React wrapper from the package - I'll probably be creating a "thehandy-react" package at some point in the future. If you need React support, you can use [this gist](https://gist.github.com/defucilis/0166a1dfaca2724277d98a517cda4243) - the following documentation still applies, but you'll need to change the import target to point to wherever you put HandyReact.tsx
+
 thehandy uses [React Context](https://reactjs.org/docs/context.html) to ensure that a single instance of the `Handy` class can be accessed by all components. So you'll need to add this provider to the root of your app.
 
 ```js
@@ -78,7 +80,9 @@ const App = () => {
 export default App;
 ```
 
-## Properties
+## Reference
+
+### Properties
 
 `serverTimeOffset`
 
@@ -90,7 +94,7 @@ export default App;
   * The connection key for the conneted Handy, if one exists. 
   * This value is automatically saved to (and loaded from) localStorage, so it should persist between reloads.
 
-## Functions
+### Functions
 
 `setMode(mode: HandyMode)`
 
@@ -173,12 +177,12 @@ export default App;
 
 ### Managing Connection / Disconnection
 
-todo
+Proper guide coming soon - there's no `connect()` funtion - just use `getStatus` or `getVersion` to check whether the device is responding.
 
 ### Manual Control
 
-todo
+Proper guide coming soon - use `setMode(1)`, `setSpeed` and `setStroke`
 
 ## Video Sync
 
-todo
+Proper guide coming soon - use `getServerTimeOffset`, then call `syncPrepare` and then `syncPlay`
