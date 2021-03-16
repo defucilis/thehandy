@@ -1,4 +1,5 @@
 import {
+    CsvUploadResponse,
     HandyMode,
     ModeResponse,
     SetSpeedResponse,
@@ -124,7 +125,7 @@ class Handy {
     //---------------------------------------------
     //             SERVER TIME SYNC
     //---------------------------------------------
-    async getServerTimeOffset(trips = 30): Promise<number> {
+    async getServerTimeOffset(trips = 30, onProgress?: (progress: number) => void): Promise<number> {
         this.enforceConnectionKey();
         const url = this.getUrl("getServerTime");
 
@@ -142,6 +143,7 @@ class Handy {
             const estimatedServerTime = Number(json.serverTime) + rtd / 2;
             const offset = estimatedServerTime - endTime;
             offsets.push(offset);
+            if(onProgress) onProgress(i / trips);
         }
 
         //discard all readings more than one standard deviation from the mean, to reduce error
@@ -176,7 +178,7 @@ class Handy {
 
     async syncPlay(play = true, time = 0): Promise<SyncPlayResponse> {
         this.enforceConnectionKey();
-        const serverTime = new Date().valueOf() + this.serverTimeOffset;
+        const serverTime = Math.round(new Date().valueOf() + this.serverTimeOffset);
         const url =
             this.getUrl("syncPlay") +
             "?play=" +
@@ -198,6 +200,19 @@ class Handy {
         const json = await response.json();
         if (json.error) throw json;
         return json;
+    }
+
+    async uploadCsv(csv: File, filename?: string): Promise<CsvUploadResponse> {
+        const url = "https://www.handyfeeling.com/api/sync/upload";
+        if(!filename) filename = "script_" + (new Date()).valueOf() + ".csv";
+        const formData = new FormData();
+        formData.append("syncFile", csv, filename);
+        const response = await fetch(url, {
+            method: 'post',
+            body: formData
+        });
+        const newUrl = await response.json();
+        return newUrl;
     }
 
     //---------------------------------------------

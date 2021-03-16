@@ -60,3 +60,12 @@ export interface SyncPlayResponse extends CommandResponse {
 export interface SyncOffsetResponse extends CommandResponse {
     offset: number;
 }
+
+export interface CsvUploadResponse {
+    success: boolean;
+    url: string;
+    info?: string;
+    filename?: string;
+    size?: number;
+    originalFile?: string;
+}
