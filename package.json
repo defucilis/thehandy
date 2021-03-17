@@ -1,6 +1,6 @@
 {
   "name": "thehandy",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A wrapper around the public REST API for The Handy with TypeScript and React",
   "keywords": [
     "handy",

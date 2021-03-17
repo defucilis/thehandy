@@ -1,4 +1,5 @@
 import {
+    CommandResponse,
     CsvUploadResponse,
     HandyMode,
     ModeResponse,
@@ -70,6 +71,14 @@ class Handy {
         this.enforceConnectionKey();
         const type = absolute ? "mm" : "%";
         const url = this.getUrl("setStroke") + "?stroke=" + speed + "&type=" + type;
+        const response = await fetch(url);
+        const json = await response.json();
+        if (json.error) throw json;
+        return json;
+    }
+    async setStrokeZone(min: number, max: number): Promise<CommandResponse> {
+        this.enforceConnectionKey();
+        const url = this.getUrl("setStroke") + "?min=" + min + "&max=" + max;
         const response = await fetch(url);
         const json = await response.json();
         if (json.error) throw json;
@@ -196,6 +205,18 @@ class Handy {
     async syncOffset(offset: number): Promise<SyncOffsetResponse> {
         this.enforceConnectionKey();
         const url = this.getUrl("syncOffset") + "?offset=" + offset;
+        const response = await fetch(url);
+        const json = await response.json();
+        if (json.error) throw json;
+        return json;
+    }
+
+    async syncAdjustTimestamp(videoTimeSeconds: number, filter = 0.5): Promise<boolean> {
+        this.enforceConnectionKey();
+        const url = this.getUrl("syncAdjustTimestamp") 
+            + "?currentTime=" + (videoTimeSeconds * 1000)
+            + "&serverTime=" + Math.round(new Date().valueOf() + this.serverTimeOffset)
+            + "&filter=" + filter;
         const response = await fetch(url);
         const json = await response.json();
         if (json.error) throw json;
