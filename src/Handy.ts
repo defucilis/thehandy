@@ -78,7 +78,7 @@ class Handy {
     }
     async setStrokeZone(min: number, max: number): Promise<CommandResponse> {
         this.enforceConnectionKey();
-        const url = this.getUrl("setStroke") + "?min=" + min + "&max=" + max;
+        const url = this.getUrl("setStrokeZone") + "?min=" + min + "&max=" + max;
         const response = await fetch(url);
         const json = await response.json();
         if (json.error) throw json;
