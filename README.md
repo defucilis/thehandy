@@ -36,49 +36,9 @@ await handy.setMode(1);
 await handy.setSpeed(50);
 ```
 
-## Getting Started (React)
+## React
 
-> NOTE! I've temporarily removed the React wrapper from the package - I'll probably be creating a "thehandy-react" package at some point in the future. If you need React support, you can use [this gist](https://gist.github.com/defucilis/0166a1dfaca2724277d98a517cda4243) - the following documentation still applies, but you'll need to change the import target to point to wherever you put HandyReact.tsx
-
-thehandy uses [React Context](https://reactjs.org/docs/context.html) to ensure that a single instance of the `Handy` class can be accessed by all components. So you'll need to add this provider to the root of your app.
-
-```js
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./App";
-import { HandyProvider } from 'thehandy'
-
-ReactDOM.render(
-  <React.StrictMode>
-    <HandyProvider>
-      <App />
-    </HandyProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
-);
-
-export default App;
-```
-
-Now, you can access the device using the `useHandy` hook:
-
-```js
-import React from "react";
-import { useHandy } from "thehandy";
-
-const App = () => {
-  const {handy} = useHandy();
-  
-  return (
-    <p>Connection key is {handy.connectionKey}</p>
-    <input onChange={e => handy.connectionKey = e.target.value} />
-    <button onClick={() => handy.toggleMode(1)}>Toggle Auto Mode</button>
-    <button onClick={() => handy.setSpeed(Math.random(100))}>Randomize Speed</button>
-  )
-}
-
-export default App;
-```
+I've created a [React wrapper package](https://github.com/defucilis/thehandy-react) to make it easy to use The Handy in a React application using React Context.
 
 ## Reference
 
