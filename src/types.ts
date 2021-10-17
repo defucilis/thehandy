@@ -1,64 +1,98 @@
+//---------------------------------------------
+//                  GENERIC
+//---------------------------------------------
+
 export enum HandyMode {
-    off = 0,
-    automatic = 1,
-    position = 2,
-    calibration = 3,
-    sync = 4,
+    unknown = -1,
+    hamp = 0,
+    hssp = 1,
+    hdsp = 2,
 }
 
-export interface CommandResponse {
-    success: boolean;
-    connected: boolean;
-    cmd?: string;
-    error?: string;
+export enum GenericResult {
+    error = -1,
+    success = 0,
 }
 
-export interface VersionResponse extends CommandResponse {
-    version: string;
-    latest: string;
+export enum SetModeResult {
+    error = -1,
+    successNewMode = 0,
+    successSameMode = 1,
 }
 
-export interface ModeResponse extends CommandResponse {
+//---------------------------------------------
+//                  HAMP
+//---------------------------------------------
+
+export enum SetHampStateResult {
+    error = -1,
+    successNewState = 0,
+    successSameState = 1,
+}
+
+export enum HampState {
+    stopped = 1,
+    moving = 2,
+}
+
+//---------------------------------------------
+//                  HDSP
+//---------------------------------------------
+
+export enum SetHdspResult {
+    error = -3,
+    successPositionReached = 0,
+    successPositionNotReached = 1,
+    successAlreadyAtPosition = 2,
+    successInterrupted = 3,
+}
+
+//---------------------------------------------
+//                  HSSP
+//---------------------------------------------
+
+export enum HsspSetupResult {
+    usingCached = 0,
+    downloaded = 1,
+}
+
+export enum HsspState {
+    needSetup = 2,
+    stopped = 3,
+    playing = 4,
+}
+
+//---------------------------------------------
+//                  INFO
+//---------------------------------------------
+
+export interface HandyInfo {
+    fwVersion: string;
+    fwStatus: HandyFirmwareStatus;
+    hwVersion: string;
+    model: string;
+    branch: string;
+}
+
+export enum HandyFirmwareStatus {
+    upToDate = 0,
+    updateRequired = 1,
+    updateAvailable = 2,
+}
+
+export interface HandySettings {
+    slideMin: number;
+    slideMax: number;
+}
+
+export interface HandyStatus {
     mode: HandyMode;
+    state: number;
 }
 
-export interface SettingsResponse extends ModeResponse {
-    position: number;
-    speed: number;
-    stroke: number;
-}
-
-export interface StatusResponse extends CommandResponse {
-    position: number;
-    speed: number;
-    setSpeedPercent: number;
-}
-
-export interface SetResponse extends CommandResponse {
-    currentPosition: number;
-}
-
-export interface SetSpeedResponse extends SetResponse {
-    speed: number;
-    speedPercent: number;
-}
-
-export interface SetStrokeResponse extends SetResponse {
-    stroke: number;
-    strokePercent: number;
-}
-
-export interface SyncPrepareResponse extends CommandResponse {
-    downloaded: boolean;
-}
-
-export interface SyncPlayResponse extends CommandResponse {
-    setOffset: number;
-    serverTimeDelta?: number;
-}
-
-export interface SyncOffsetResponse extends CommandResponse {
-    offset: number;
+export interface SlideInfo {
+    min: number;
+    max: number;
 }
 
 export interface CsvUploadResponse {
