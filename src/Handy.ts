@@ -176,7 +176,7 @@ class Handy {
         size?: number
     ): Promise<SyncPrepareResponse> {
         this.enforceConnectionKey();
-        let url = this.getUrl("syncPrepare") + "?url=" + scriptUrl + "&timeout=30000";
+        let url = this.getUrl("syncPrepare") + "?url=" + encodeURI(scriptUrl) + "&timeout=30000";
         if (name) url += "&name=" + name;
         if (size) url += "&size=" + size;
         const response = await fetch(url);
