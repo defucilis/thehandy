@@ -1,1 +1,0 @@
-{"version":3,"file":"TheHandy.d.ts","sourceRoot":"","sources":["../src/TheHandy.tsx"],"names":[],"mappings":"AAAA,OAAc,EAAuC,SAAS,EAAE,MAAM,OAAO,CAAC;AAC9E,OAAO,KAAK,MAAM,GAAG,CAAC;AAStB,QAAA,MAAM,aAAa;cAA8B,SAAS;iBAGzD,CAAC;AAEF,QAAA,MAAM,QAAQ;WAZ8B,KAAK,GAAG,IAAI;CAcvD,CAAC;AAEF,OAAO,EAAE,aAAa,EAAE,CAAC;AACzB,eAAe,QAAQ,CAAC"}
