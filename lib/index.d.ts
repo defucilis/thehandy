@@ -1,5 +1,6 @@
 import Handy from "./Handy";
 import HandyLegacy from "./HandyLegacy";
-export { HandyLegacy };
+import HandyUtils from "./HandyUtils";
+export { HandyLegacy, Handy, HandyUtils };
 export default Handy;
 //# sourceMappingURL=index.d.ts.map
