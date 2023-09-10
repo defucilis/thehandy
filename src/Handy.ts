@@ -359,7 +359,6 @@ class Handy {
         const json: { result: HsspSetupResult } = await this.putJson("hssp/setup", data);
 
         this.hsspPreparedUrl = url;
-        this.hsspState = HsspState.stopped;
         this.connected = true;
         return json.result;
     }
