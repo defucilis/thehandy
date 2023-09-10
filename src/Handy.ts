@@ -180,7 +180,7 @@ class Handy {
         return json;
     }
 
-    /** Gets the current HAMP velocity, from 0 - 100 - puts the handy in HAMP mode first, if it isn't already in HAMP mode */
+    /** Gets the current HAMP velocity, from 0 - 100 - putes the handy in HAMP mode first, if it isn't already in HAMP mode */
     async getHampVelocity(): Promise<number> {
         if (this.currentMode !== HandyMode.hamp) await this.setMode(HandyMode.hamp);
 
@@ -193,7 +193,7 @@ class Handy {
         return json.velocity;
     }
 
-    /** Sets the current HAMP velocity, from 0 - 100 - puts the handy in HAMP mode first, if it isn't already in HAMP mode */
+    /** Sets the current HAMP velocity, from 0 - 100 - putes the handy in HAMP mode first, if it isn't already in HAMP mode */
     async setHampVelocity(velocity: number): Promise<GenericResult> {
         velocity = Math.min(100, Math.max(0, velocity));
 
@@ -419,7 +419,7 @@ class Handy {
     }
 
     /** Sets the current manual offset of the Handy in milliseconds. Negative values mean that the script will be delayed, positive values mean that the script will be advanced. */
-    async setHstpOffset(offset: number): Promise<GenericResult> {
+    async setHstpoffset(offset: number): Promise<GenericResult> {
         const json: { result: GenericResult } = await this.putJson("hstp/offset", {
             offset: Math.round(offset),
         });
