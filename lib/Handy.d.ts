@@ -61,9 +61,9 @@ declare class Handy {
         result: GenericResult;
         state: HampState;
     }>;
-    /** Gets the current HAMP velocity, from 0 - 100 - puts the handy in HAMP mode first, if it isn't already in HAMP mode */
+    /** Gets the current HAMP velocity, from 0 - 100 - putes the handy in HAMP mode first, if it isn't already in HAMP mode */
     getHampVelocity(): Promise<number>;
-    /** Sets the current HAMP velocity, from 0 - 100 - puts the handy in HAMP mode first, if it isn't already in HAMP mode */
+    /** Sets the current HAMP velocity, from 0 - 100 - putes the handy in HAMP mode first, if it isn't already in HAMP mode */
     setHampVelocity(velocity: number): Promise<GenericResult>;
     /** Sets the next absolute position (xa) of the device, and the absolute velocity (va) the device should use to reach the position. Puts the Handy in HDSP mode, if it isn't already in HDSP mode */
     setHdspXaVa(positionAbsolute: number, velocityAbsolute: number, stopOnTarget?: boolean): Promise<SetHdspResult>;
@@ -92,7 +92,7 @@ declare class Handy {
     /** Gets the current manual offset of the Handy in milliseconds. Negative values mean that the script will be delayed, positive values mean that the script will be advanced. */
     getHstpOffset(): Promise<number>;
     /** Sets the current manual offset of the Handy in milliseconds. Negative values mean that the script will be delayed, positive values mean that the script will be advanced. */
-    setHstpOffset(offset: number): Promise<GenericResult>;
+    setHstpoffset(offset: number): Promise<GenericResult>;
     /** Gets the current round-trip delay from the Handy to the server and back, in milliseconds. Used for synchronization. */
     getHstpRtd(): Promise<number>;
     /** Syncronizes the device with the server clock and calculates the round-trip-delay between the device and the server. As far as I can tell, this just doesn't work. I suggest using getServerTimeOffset instead. */

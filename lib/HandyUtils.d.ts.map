@@ -1,1 +1,1 @@
-{"version":3,"file":"HandyUtils.d.ts","sourceRoot":"","sources":["../src/HandyUtils.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,iBAAiB,EAAE,MAAM,SAAS,CAAC;AAE5C,MAAM,CAAC,OAAO,OAAO,UAAU;IAC3B,2HAA2H;WAC9G,SAAS,CAAC,GAAG,EAAE,IAAI,EAAE,QAAQ,CAAC,EAAE,MAAM,GAAG,OAAO,CAAC,iBAAiB,CAAC;CAYnF"}
+{"version":3,"file":"HandyUtils.d.ts","sourceRoot":"","sources":["../src/HandyUtils.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,OAAO,UAAU;IAC3B,2HAA2H;WAC9G,SAAS,CAAC,GAAG,EAAE,IAAI,EAAE,QAAQ,CAAC,EAAE,MAAM,GAAG,OAAO,CAAC,MAAM,CAAC;CAYxE"}
