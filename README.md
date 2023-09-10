@@ -361,4 +361,4 @@ Note - *all* methods on the Handy class are async!
 `uploadCsv`
   * Takes a CSV file and uploads it to the publicly-provided Handy server, to obtain a URL that can be sent to the Handy using `setHsspSetup`
   * Inputs: `(csv: File, filename?: string)`
-  * Outputs: `Promise<CsvUploadResponse>`
+  * Outputs: `Promise<string>`
